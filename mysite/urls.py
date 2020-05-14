@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     
     path('bookmarks/', include('bookmark_app.urls')),
-    path('api/create', api.create_bookmark.as_view(), name= 'create-book')
+    path('api/create', api.create_bookmark, name= 'create-book')
     
 
 ]

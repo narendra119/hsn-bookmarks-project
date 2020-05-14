@@ -10,6 +10,15 @@
 <body>
 
   <h1>welcome! login to home page</h1>
+  <h6>BookMarks List</h6>
+  <ul>
+    {% if queryset %}
+    {% for q in queryset %}
+      <li> {{ q.url }}: {{ q.customer_name.name }} </li>
+    {% endfor %}
+    
+    {% endif %}
+  </ul>
   {% if user.is_authenticated %}
   <p>hello {{ user.email }}!</p>
   {% endif %}

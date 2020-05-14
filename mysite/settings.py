@@ -116,5 +116,5 @@ CSRF_COOKIE_DOMAIN = None
 
 import os
 
-if os.getlogin() == 'Nagarjuna':
+if os.environ.get('DJANGO_DEVELOPMENT'):
     DEBUG = True

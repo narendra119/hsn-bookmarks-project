@@ -1,0 +1,4 @@
+mysite/__pycache__/
+bookmark_app/migrations/
+pyproject.toml
+poetry.lock

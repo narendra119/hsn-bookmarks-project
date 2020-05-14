@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <title>The HTML5 Herald</title>
+</head>
+
+<body>
+
+  <h1>welcome! login to home page</h1>
+  {% if user.is_authenticated %}
+  <p>hello {{ user.email }}!</p>
+  {% endif %}
+
+  <a href={{login}}> Login </a>
+
+</body>
+
+</html>

@@ -4,8 +4,13 @@ from django.contrib.auth import (
   get_user_model,
 
   )
-
+from .models import Customer, BookMark
 User = get_user_model()
+
+class CreateBookMarkForm(forms.ModelForm):
+  class Meta:
+    model = BookMark
+    fields = "__all__"
 
 class CustomerLoginForm(forms.Form):
   username = forms.CharField(max_length = 200)
@@ -46,8 +51,6 @@ class CustomerRegistrationForm(forms.ModelForm):
     if email != email2:
       raise forms.ValidationError("Emails should match")
     email_qs = User.objects.filter(email = email)
-    if email_qs.exists:
+    if email_qs.exists():
       raise forms.ValidationError('Email has already been used')
-    return email
-
-
+    return super(CustomerRegistrationForm,self).clean(*args, **kwargs)

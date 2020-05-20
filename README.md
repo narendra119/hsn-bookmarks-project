@@ -1,43 +1,18 @@
-# Developing Django on Repl.it
+# Django Application that store the User BookMarks
 
-- Fork this template to get started
-- Simply hit run to start the server
-- The server will autoreload as needed. You don't need to restart the server manually.
+- This app stores users and their bookmarks
+- Use '/api/create' endpoint to create BookMarks
+- Use '/api/browse' endpoint to browse Bookmarks
+      Parameters for /api/browse
+          - start_date
+          - lat
+          - long
+          - end_date
+          - title_contains
+          - source_name
+          - sort_by
 
-## Add your first view
-
-1. Create a file under `mysite` named `views.py` with the following contents:
-
+#### Please use the below command to start the server
 ```
-from django.http import HttpResponse
-
-
-def index(request):
-    return HttpResponse("Hello, world.")
+python manage.py runserver
 ```
-
-2. Add a url pattern under `mysite/urls.py`. It should look like this:
-
-```
-from django.contrib import admin
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-]
-```
-
-## Shell
-
-Django utilizes the shell for managing your site. For this click on the `?` in the lower-right corner and click "Workspace shortcuts" from there you can open a new shell pane. 
-
-## Database
-
-By default this template utilizes the sqlite database engine. While this is fine for development it won't work with external users of your app as we don't persist changes to files when they happen outside the development environment. 
-
-We suggest bringing a database using an outside service. 
-
-See Django documentation on how to setup a database: https://docs.djangoproject.com/en/3.0/intro/tutorial02/
-
